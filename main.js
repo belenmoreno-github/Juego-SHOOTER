@@ -18,6 +18,7 @@ const OPPONENT_HEIGHT = 5,
     SHOT_PICTURE_PLAYER = "assets/shot1.png",
     SHOT_PICTURE_OPPONENT = "assets/shot2.png",
     SHOT_WIDTH = 1.5;
+    PLAYER_LIVES = 3;
 
 function getRandomNumber (range) {
     return Math.floor(Math.random() * range);
@@ -29,7 +30,9 @@ function collision (div1, div2) {
     return !(a.bottom < b.top || a.top > b.bottom || a.right < b.left || a.left > b.right);
 
 }
-var game;
+//intancia de la clase GAME y llama al método start para iniciar la partida
+//tiene un temporizador que llama a la función update que actualiza el estado del juego
+var game; 
 document.addEventListener("DOMContentLoaded", () => {
         game = new Game();
         game.start();

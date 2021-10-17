@@ -17,18 +17,19 @@ class Game {
         this.opponentShots = []; // Disparos del oponente
         this.xDown = null; //  Posición en la que el usuario ha tocado la pantalla
         this.paused = false; // Indica si el juego está pausado
+        this.score = 0; // Refleja la puntuación inicial
     }
 
     /**
      * Da comienzo a la partida
-     */
+     */ 
     start () {
         if (!this.started) {
             // RequestAnimationFrame(this.update());
-            window.addEventListener("keydown", (e) => this.checkKey(e, true));
-            window.addEventListener("keyup", (e) => this.checkKey(e, false));
-            window.addEventListener("touchstart", (e) => this.handleTouchStart(e, true));
-            window.addEventListener("touchmove", (e) => this.handleTouchMove(e, false));
+            window.addEventListener("keydown", (e) => this.checkKey(e, true)); //guarda la tecla pulsada por el usuario
+            window.addEventListener("keyup", (e) => this.checkKey(e, false)); //se llama cuando el usuario deja de pulsar la tecla
+            window.addEventListener("touchstart", (e) => this.handleTouchStart(e, true)); //cuando se toca la pantalla, guarda la posición dónde el usuario ha tocado
+            window.addEventListener("touchmove", (e) => this.handleTouchMove(e, false)); //cuando el usuario arrastra el dedo por la pantalla
             document.getElementById("pause").addEventListener("click", () => {
                 this.pauseOrResume();
             });
@@ -221,6 +222,8 @@ class Game {
     /**
      * Actualiza los elementos del juego
      */
+    //comprueba el valor de XDOWN y KEYPRESS para actualizar la posición
+    //del personaje principal en función de las acciones del usuario.
     update () {
         if (!this.ended) {
             this.player.update();

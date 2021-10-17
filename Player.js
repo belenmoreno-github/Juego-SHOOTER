@@ -7,6 +7,7 @@ class Player extends Character {
      * Inicializa un jugador
      * @param game {Game} La instancia del juego al que pertenece el jugador
      */
+        
     constructor (game) {
         const height = PLAYER_HEIGHT * game.width / 100,
             width = PLAYER_WIDTH * game.width / 100,
@@ -15,8 +16,11 @@ class Player extends Character {
             speed = PLAYER_SPEED,
             myImage = PLAYER_PICTURE,
             myImageDead = PLAYER_PICTURE_DEAD;
+            lives = PLAYER_LIVES;
+            
 
         super(game, width, height, x, y, speed, myImage, myImageDead);
+        this.lives = lives;
     }
 
     /**
@@ -47,10 +51,22 @@ class Player extends Character {
      */
     collide() {
         if (!this.dead) {
+            this.lives -= 1; //se resta la vida
+            super.updateLives(this.lives); //se muestra por pantalla
+
             setTimeout(() => {
-                this.game.endGame();
+                super.collide_alive();
             }, 2000);
-            super.collide();
+
+            
+
+            if(this.lives == 0){ //que diferencia entre == y ===
+                super.collide_dead();
+                this.game.endGame();
+                
+            }
+        //super.collide();
+
         }
     }
 }

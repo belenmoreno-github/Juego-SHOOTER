@@ -89,8 +89,11 @@ class Game {
     removeOpponent () {
         if (this.opponent) {
             document.body.removeChild(this.opponent.image);
+        } else {
+            this.opponent = new Boss(this);
         }
-        this.opponent = new Opponent(this);
+        
+        
     }
 
     /**

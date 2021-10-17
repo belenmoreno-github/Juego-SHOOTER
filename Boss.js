@@ -63,9 +63,7 @@ class Boss extends Opponent {
     collide() {
         if (!this.dead) {
             super.collide();
-            this.game.endGame2();
-
-            
+            this.game.endGame2();  
         }
     }
 }

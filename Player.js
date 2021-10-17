@@ -60,6 +60,7 @@ class Player extends Character {
             }, 2000);
 
             if(this.lives == 0){ 
+                super.collide(this.myImageDead);
                 this.game.endGame(); 
             }
             super.collide();

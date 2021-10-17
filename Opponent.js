@@ -64,13 +64,13 @@ class Opponent extends Character {
      */
     collide() {
         if (!this.dead) {
+            this.game.score += 1; // se suma un punto a score
+            super.count_score(this.game.score); //se muestre por pantalla
             setTimeout(() => {
                 this.game.removeOpponent();
             }, 2000);
             super.collide();
-            this.game.score += 1; // se suma un punto a score
-            super.updateScore(this.game.score);
-
+            
         }
     }
 }

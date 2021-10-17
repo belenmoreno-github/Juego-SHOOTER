@@ -24,14 +24,18 @@ class Character extends Entity {
      * Mata a un personaje
      */
 
-    collide_alive() {
-        this.image.src = this.myImage;
-        this.dead = false;
-    }
-    
-    collide_dead() {
-        this.image.src = this.myImageDead;
+
+    collide(img) {
+        this.image.src = img || this.myImageDead;
         this.dead = true;
+    }
+
+    count_score(score) {
+        document.getElementById("scoreli").innerHTML = "Score: " + String(score);
+    }
+
+    count_lives(lives) {
+        document.getElementById("livesli").innerHTML = "Lives: " + String(lives);
     }
 }
 

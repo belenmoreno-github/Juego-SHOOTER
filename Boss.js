@@ -19,7 +19,7 @@ class Boss extends Opponent {
     /**
      * Crea un nuevo disparo
      */
-    shoot () {
+     shoot () {
         if (!this.dead && !this.game.ended) {
             if (!this.game.paused) {
                 this.game.shoot(this);
@@ -56,17 +56,15 @@ class Boss extends Opponent {
         }
     }
 
+
     /**
      * Mata al oponente
      */
     collide() {
         if (!this.dead) {
-            this.game.score += 1; // se suma un punto a score
-            super.count_score(this.game.score); //se muestre por pantalla
-            setTimeout(() => {
-                this.game.removeOpponent();
-            }, 2000);
             super.collide();
+            this.game.endGame2();
+
             
         }
     }

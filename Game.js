@@ -212,6 +212,12 @@ class Game {
         gameOver.render();
     }
 
+    endGame2 () {
+        this.ended = true;
+        let gameOver = new Entity(this, this.width / 2, "auto", this.width / 4, this.height / 4, 0, GAME_OVER_PICTURE_WIN)
+        gameOver.render();
+    }
+
     /**
      * resetea el juego
      */

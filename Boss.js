@@ -2,7 +2,7 @@ class Boss extends Opponent {
     /**
      * @param game {Game} La instancia del juego al que pertenece el oponente
      */
-    constructor (game) {
+    constructor (game) { 
         const height = OPPONENT_HEIGHT * game.width / 100,
             width = OPPONENT_WIDTH * game.width / 100,
             x = getRandomNumber(game.width - width / 2),

@@ -1,10 +1,13 @@
 html {
   overflow: hidden;
+  background-image: url("assets/n.png");
+  background-size: 1900px;
 }
 
 .Opponent {
 	animation: rotation 3s infinite linear;
 	-webkit-animation: rotation 3s infinite linear;
+	color: rgb(0, 0, 0);
 }
 
 .paused .Opponent {
@@ -25,10 +28,16 @@ html {
 
 .gamebutton {
 	border: none;
-	background: #ddd;
-	color: #333;
+	background: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
 	padding: 10px 20px;
 	outline: none;
 	font-family: monospace;
 	cursor: pointer;
 }
+
+
+ul{
+	color: rgb(0, 0, 0);
+}
+

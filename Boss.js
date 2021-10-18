@@ -10,6 +10,7 @@ class Boss extends Opponent {
 
         super(game, speed, myImage, myImageDead);
         this.direction = "R"; // Dirección hacia la que se mueve el oponente
+        
         setTimeout(() => this.shoot(), 1000 + getRandomNumber(2500));
     }
 

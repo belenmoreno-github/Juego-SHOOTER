@@ -1,16 +1,21 @@
 class Boss extends Opponent {
     /**
-     * @param game {Game} La instancia del juego al que pertenece el oponente
+     * {Game} La instancia del juego al que pertenece el oponente
      */
     constructor (game) { 
-        const
-            speed = BOOS_SPEED,
-            myImage = BOSS_PICTURE,
-            myImageDead = BOSS_PICTURE_DEAD;
+        const bossmyImage = BOSS_PICTURE,
+            bossspeed = BOSS_SPEED,
+            bossmyImageDead = BOSS_PICTURE_DEAD,
+            isBoss = true;
 
-        super(game, speed, myImage, myImageDead);
+        super(game, isBoss);
         this.direction = "R"; // Dirección hacia la que se mueve el oponente
-        
+        this.speed = bossspeed;
+        this.myImage = bossmyImage;
+        this.myImageDead = bossmyImageDead;
+
+
+
         setTimeout(() => this.shoot(), 1000 + getRandomNumber(2500));
     }
 
@@ -19,9 +24,9 @@ class Boss extends Opponent {
      * Mata al oponente
      */
     collide() {
-        if (!this.dead) {
+        //if (!this.dead) {
             super.collide();
             this.game.endGame2();  
-        }
+        //}
     }
 }

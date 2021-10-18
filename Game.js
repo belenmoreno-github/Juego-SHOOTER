@@ -36,6 +36,7 @@ class Game {
             document.getElementById("reset").addEventListener("click", () => {
                 this.resetGame();
             });
+            
             this.started = true;
             this.width = window.innerWidth;
             this.height = window.innerHeight;
@@ -91,7 +92,8 @@ class Game {
             document.body.removeChild(this.opponent.image);
         } //if (this.opponent instanceof(Boss)) {
             //document.body.removeChild(this.Boss.image);
-            this.opponent = new Boss(this);
+        this.opponent = new Boss(this);
+            //Boss
         }
     
           

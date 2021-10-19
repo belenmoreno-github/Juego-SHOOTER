@@ -20,7 +20,7 @@ const OPPONENT_HEIGHT = 5,
     SHOT_WIDTH = 1.5,
     PLAYER_LIVES = 3,
     BOSS_PICTURE = "assets/jefe.png",
-    BOSS_PICTURE_DEAD = "assets/jefe_muerto.png",
+    BOSS_PICTURE_DEAD = "assets/muerto.png",
     BOSS_SPEED = 10,
     GAME_OVER_PICTURE_WIN = "assets/you_win.png";
 

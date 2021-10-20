@@ -1,3 +1,8 @@
+/**
+ * BOSS al que hay que destruir para ganar la partida
+ */
+
+
 class Boss extends Opponent {
     /**
      * {Game} La instancia del juego al que pertenece el oponente

@@ -67,21 +67,5 @@ class Player extends Character {
 
         }
     }
-    /**
-     * if (!this.dead) {
-            this.lives -= 1; //se resta la vida
-            super.count_lives(this.lives); //se muestra por pantalla
 
-            setTimeout(() => {
-                super.collide_alive();
-                //this.dead = false;
-            }, 2000);
-
-            if(this.lives == 0){ 
-                //this.dead = true;
-                super.collide_dead();
-                this.game.endGame(); 
-            }
-        super.collide();
-     */
 }

@@ -24,12 +24,14 @@ class Character extends Entity {
      * Mata a un personaje
      */
 
-
     collide(img) {
         this.image.src = img || this.myImageDead;
         this.dead = true;
     }
 
+    /**
+     * Para que me aparezca por pantalla la puntuación y las vidas 
+     */
     count_score(score) {
         document.getElementById("scoreli").innerHTML = "Score: " + String(score);
     }
